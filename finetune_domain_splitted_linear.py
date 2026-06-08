@@ -15,7 +15,7 @@ from src.utils import cosine_lr, LabelSmoothing
 from src.heads import get_classification_head
 from src.linearize import LinearizedImageEncoder
 # Import adaptive utility
-from src.utils.merge_utils import compute_adaptive_alpha, log_adaptive_alpha
+from src.utils2.merge_utils import compute_adaptive_alpha, log_adaptive_alpha
 
 PRINT_EVERY = 100
 

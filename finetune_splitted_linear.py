@@ -17,7 +17,7 @@ from src.merging.task_vectors import TaskVector
 from src.linearize import LinearizedImageEncoder
 from src.eval import evaluate,  eval_single_dataset
 # Import your new utility functions
-from src.utils.merge_utils import compute_adaptive_alpha, log_adaptive_alpha
+from src.utils2.merge_utils import compute_adaptive_alpha, log_adaptive_alpha
 
 def interpolate_weights(theta_0, theta_1, alpha, fisher_mat):
     assert len(fisher_mat) == 2
