@@ -163,13 +163,35 @@ def parse_arguments():
         help="EWC lambda"
     )
     
+   # OLD (Keep for backward compatibility)
     parser.add_argument(
         "--alpha_merge",
         type=float,
         default=0.4,
         help="interpolation coefficient"
-    )  
-      
+    )
+    
+    # NEW (Adaptive Configuration)
+    parser.add_argument(
+        "--alpha_mode",
+        type=str,
+        default="adaptive",
+        choices=["adaptive", "fixed"],
+        help="Mode for computing merge weight: 'fixed' uses --alpha_merge, 'adaptive' uses FIM ratios."
+    )
+    parser.add_argument(
+        "--alpha_min",
+        type=float,
+        default=0.05,
+        help="Minimum bound for adaptive alpha"
+    )
+    parser.add_argument(
+        "--alpha_max",
+        type=float,
+        default=0.95,
+        help="Maximum bound for adaptive alpha"
+    )
+
     # OTHER    
     parser.add_argument(
         '--seed',
